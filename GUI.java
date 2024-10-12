@@ -5,7 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import java.awt.*;
 import javax.swing.JLabel;
-public class GUI {
+import java.awt.event.*;
+
+public class GUI implements ActionListener {
 
     public GUI() {
         JFrame frame = new JFrame();
@@ -16,6 +18,7 @@ public class GUI {
         panel.setLayout(new GridLayout(0, 1));
         panel.add(button);
         panel.add(label);
+        button.addActionListener(this);
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Yahaha mothershucker");
@@ -25,5 +28,9 @@ public class GUI {
 
     public static void main() {
         new GUI();
+    }
+
+    public void  actionPerformed(ActionEvent e) {
+        System.out.println("Yahaha");
     }
 }
